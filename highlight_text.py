@@ -23,7 +23,9 @@ def index():
     highlight_keywords = ["三菱", "トラフィック", "マツダ", "衝突", "道路"]
     convoStringList = [
 		{'speaker': "クライアント", 'sentence_line': "こんにちは道路、これは緊急ホットラインですか？第11地区カムニン道路沿いの 三菱とマツダ3両が 衝突して渋 滞しているとのことです。"},
-        {'speaker': "オペレーター", 'sentence_line': "こんにちは、この緊急ヘルプデスク、あなたの場所を教えてください。"}]
+        {'speaker': "オペレーター", 'sentence_line': "こんにちは、この緊急ヘルプデスク、あなたの場所を教えてください。"},
+        {'speaker': "クライアント", 'sentence_line': "私は三菱自動車の道路を走っていますこれは緊急事態です助けてください。"},
+        {'speaker': "オペレーター", 'sentence_line': "奥さん、トヨタの車に乗っていますか？。"}]
     modified_convo = []
     
     try:
