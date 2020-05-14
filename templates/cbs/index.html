@@ -1,0 +1,104 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-2 left_menu">
+    	<div class="row">
+      		<img src="https://i.pinimg.com/564x/8e/a1/19/8ea1198d59d3321f0a429edbfd913b51.jpg" class="img_responsive"/>
+      	</div>
+
+      	<div class="row">
+      		<ul class="list-group row left_panel_info">
+			  <li class="list-group-item" id = "left_panel">メニュー1</li>
+			  <li class="list-group-item" id = "left_panel">メニュー2</li>
+			  <li class="list-group-item " id = "left_panel">サンプル情報とマニュアル-1</li>
+			  <li class="list-group-item " id = "left_panel">サンプル情報とマニュアル-2</li>
+			  <li class="list-group-item " id = "left_panel">サンプル情報-1</li>
+			  <li class="list-group-item " id = "left_panel">サンプル情報-2</li>
+			  <li class="list-group-item " id = "left_panel">サンプル情報-3</li>
+			</ul>
+      	</div>		
+    </div>
+    <div class="col-6">
+		{% block title %}サンプルの会話{%endblock%}
+		  <div class="convo">
+		  	<p>テスト中</p>
+        {% for convo in updated_convo %}
+          <p>{{convo.speaker}}: {{convo.sentence_line|safe}}</p>
+        {% endfor %}
+      </div>
+		  <div class="form">
+		  			  <!--<button class="untagged">untagged</button>-->
+		    <p class="inputform">
+          情報-Add keyword:
+          <input type="checkbox" id="check_add_keyword">  
+          <input style="margin-top: 10px;" type="text" id="input_add_keyword">
+        </p>
+        <p class="inputform">
+		      情報
+		      <input type="checkbox" id="check_keyword1">	
+		      <input style="margin-top: 10px;" type="text" id="input_keyword1">
+		  	</p>
+		  	<p class="inputform">
+		      情報
+		      <input type="checkbox" id="check_keyword">	
+		      <input style="margin-top: 10px;" type="text" id="input_keyword3">
+		  	</p>
+		  	<p class="inputform">
+		      情報
+		      <input type="checkbox" id="check_keyword">	
+		      <input style="margin-top: 10px;" type="text" id="input_keyword4">
+		  	</p>
+
+		  </div>
+		  <div class="action">
+		  	<button type="button" id="addKeyword" class="btn btn-dark">セーブ</button>
+		  </div>	
+	</div>
+    <div class="col-4">
+      	<span>知識</span>
+      	<div class="knowledge">
+		  	<h3>初期マニュアル</h3>
+		  	<p>ニンジンより弓の笑顔が、パフォーマンスの葬儀でのボート。病気の最大のがあるかもしれません。アウェイ彼のベストセラーとバリウスvehicula turpis。マエケナスのゼンパーが、妊娠しているかの選手ではありませんでし。借り換え。週末の前に存在、Iない前庭mauris dignissimそうではありません。今、製造トラックを飲みたいです。</p>
+		  	<p>ニンジンより弓の笑顔が、パフォーマンスの葬儀でのボート。病気の最大のがあるかもしれません。アウェイ彼のベストセラーとバリウス</p>
+		  	<h4>サンプルの説明</h4>
+		  	<p>ニンジンより弓の笑顔が、パフォーマンスの葬儀でのボート。病気の最大のがあるかもしれません。アウェイ彼のベストセラーとバリウス</p>
+		  	<b>サンプルの説明</b>
+		  	<p>ニンジンより弓の笑顔が、パフォーマンスの葬儀でのボート。病気の最大のがあるかもしれません。アウェイ彼のベストセラーとバリウス</p>
+		 </div>
+    </div>
+  </div>
+
+
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+  // jQuery methods go here...
+  $('#check_keyword1').on('click', function () {
+  	 var input_keyword = $('#input_keyword1').val()
+  	 	$('span:contains('+input_keyword+')').toggleClass("keyword not_keyword");
+   });
+
+
+  //add keyword
+  var new_keywords = []
+  $('#addKeyword').on('click', function () {
+     var input_keyword = $('#input_add_keyword').val()
+      new_keywords.push(input_keyword)
+      alert('New keywords: '+new_keywords)
+   });
+
+  $('#check_add_keyword33').on('click', function () {
+     var input_keyword = $('#input_add_keyword').val()
+      $( "div.convo" ).find( "p:contains('こと')" ).css( "background-color", "red" );
+      // $('span:contains('+input_keyword+')').toggleClass("keyword not_keyword");
+   });
+
+}); 
+
+</script>
+
+{% endblock %}
+
+
