@@ -23,5 +23,5 @@ def index():
 app.register_blueprint(highlight_text.bp)
 app.add_url_rule('/home', endpoint='home')
 
-if __name__ == "__main__":
+if __name__ == "__app__":
 	app.run(debug=True)
