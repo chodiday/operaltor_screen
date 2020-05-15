@@ -18,8 +18,8 @@ __part_of_speech_filter = []
 
 bp = Blueprint('highlight_text', __name__)
 
-@bp.route('/')
-def index():
+@bp.route('/home')
+def home():
     highlight_keywords = ["三菱", "トラフィック", "マツダ", "衝突", "道路"]
     convoStringList = [
 		{'speaker': "クライアント", 'sentence_line': "こんにちは道路、これは緊急ホットラインですか？第11地区カムニン道路沿いの 三菱とマツダ3両が 衝突して渋 滞しているとのことです。"},
